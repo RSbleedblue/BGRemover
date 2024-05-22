@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
-import {Audio} from 'react-loader-spinner'; 
+import { Audio } from 'react-loader-spinner'; 
 
 const HandleUpload = () => {
     const fileInputRef = useRef(null);
     const [loading, setLoading] = useState(false); 
+
     const handleButtonClick = () => {
         fileInputRef.current.click();
     };
@@ -20,7 +21,7 @@ const HandleUpload = () => {
             try {
                 const response = await axios.post('https://api.remove.bg/v1.0/removebg', formData, {
                     headers: {
-                        'X-Api-Key': 'your-remove-bg-api-key',
+                        'X-Api-Key': 'zvw1qhQEEkTaFG2J3piPa6AR',
                         'Content-Type': 'multipart/form-data'
                     },
                     responseType: 'arraybuffer'
@@ -61,12 +62,13 @@ const HandleUpload = () => {
                     onChange={handleFileChange}
                 />
                 {loading && (
-                    <Audio 
-                        type="TailSpin"
-                        color="#000"
-                        height={30}
-                        width={30}
-                    />
+                    <div className="flex justify-center items-center">
+                        <Audio
+                            color="#d97706"
+                            height={30}
+                            width={30}
+                        />
+                    </div>
                 )}
                 <p className="text-xs text-slate-600">See the magic we provide</p>
             </div>
